@@ -4,7 +4,8 @@ from youtube import YoutubeDataAPIClient
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--num_fetched', default=1)    # オプション引数（指定しなくても良い引数）を追加
+# オプション引数（指定しなくても良い引数）を追加
+parser.add_argument('--num_fetched', type=int, default=1)
 
 
 args = parser.parse_args()
