@@ -18,3 +18,8 @@ pipenv sync
 ```
 pipenv run python ans1.py --num_fetched 100
 ```
+
+### ans2
+```
+pipenv run python ans2.py --num_fetched 10
+```
