@@ -25,12 +25,12 @@ class YoutubeDataAPIClient:
         max_result = 50 if num_fetched > 50 else num_fetched
 
         for _ in range(max_try):
+            # quota引っかかる可能性があるためAPI実行上限いれておく
             res = self._client.search().list(
                 # https://developers.google.com/youtube/v3/docs/search/list?hl=ja
                 part="id",
                 # 検索したい文字列を指定
                 q=query,
-                # 最新順で取得
                 order=order,
                 type="video",
                 maxResults=max_result,
