@@ -18,7 +18,15 @@ class YoutubeDataAPIClient:
     def __init__(self) -> None:
         self._client = build("youtube", "v3", developerKey=self.API_KEY)
 
-    def fetch_url_as_list(self, query: str, num_fetched: int, order: str = "date", max_try: int = 10) -> list[str]:
+    def fetch_url_as_list(
+        self,
+        query: str,
+        num_fetched: int,
+        order: str = "date",
+        region_code: str = None,
+        published_after: str = None,
+        max_try: int = 10
+    ) -> list[str]:
         page_token = None
         res_urls = []
 
@@ -35,6 +43,8 @@ class YoutubeDataAPIClient:
                 type="video",
                 maxResults=max_result,
                 pageToken=page_token,
+                regionCode=region_code,
+                publishedAfter=published_after,
                 fields="nextPageToken,items(id(videoId))"
             ).execute()
 
