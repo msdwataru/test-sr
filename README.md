@@ -27,6 +27,7 @@ pipenv run python ans2.py --num_fetched 10
 ```
 
 ### ans3
+`ans3.pdf`に図示
 
 ### ans4
 `ans4.md`に記載
