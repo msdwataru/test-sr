@@ -26,7 +26,7 @@ class YoutubeDataAPIClient:
         region_code: str = None,
         published_after: str = None,
         max_try: int = 10
-    ) -> list[str]:
+    ):
         page_token = None
         res_urls = []
 
